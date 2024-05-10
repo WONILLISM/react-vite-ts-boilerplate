@@ -1,16 +1,54 @@
 {
   "compilerOptions": {
+    /** Basic Options
+     *
+     * ECMA Version
+     */
     "target": "ES2020",
+    /**
+     * Class Fields 사용 여부
+     * ECMA Script 최신사양을 사용할 수 있게 해줌
+     */
     "useDefineForClassFields": true,
+    /**
+     * Typescript 컴파일러가 기본적으로 사용할 라이브러리
+     *
+     * ES2020 : ES2020 표준에 정의된 모든 타입 포함
+     * DOM : DOM API에 정의된 타입 포함
+     * DOM.Iterable : DOM API에 정의된 반복가능한 타입 포함
+     */
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    /**
+     * 모듈 시스템
+     * ESNext: 최신사양
+     */
     "module": "ESNext",
+    /**
+     * TypeScript가 .d.ts 파일(일반적으로 외부 라이브러리의 타입 정의를 포함)의 타입 검사를 건너뛸지를 결정
+     */
     "skipLibCheck": true,
 
     /* Bundler mode */
+    /**
+     * 모듈 해석 방식
+     * bundler: 빌드 시점에 모듈을 해석
+     */
     "moduleResolution": "bundler",
+    /**
+     * TypeScript 파일 확장자를 가져올 수 있는지 여부를 지정
+     */
     "allowImportingTsExtensions": true,
+    /**
+     * JSON파일 직접 사용
+     */
     "resolveJsonModule": true,
+    /**
+     * 각 파일을 별도의 모듈로 간주해야 하는지 여부를 지정
+     */
     "isolatedModules": true,
+    /**
+     * TypeScript가 JavaScript 코드를 출력하지 않게 합니다.
+     */
     "noEmit": true,
     "jsx": "react-jsx",
 
@@ -18,7 +56,13 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Paths */
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
